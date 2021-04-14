@@ -16,7 +16,7 @@ class MoviesController < ApplicationController
       end
 
       format.html 
-    end
+      end
   end
 
   def show
@@ -75,4 +75,6 @@ class MoviesController < ApplicationController
 
     redirect_to movies_url, notice: "Movie deleted successfully."
   end
+
+ 
 end
