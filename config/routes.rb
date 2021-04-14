@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   #get "/",  controller: "movies", action: "index" 
-  get({"/" => "movies#index"
+  #get({"/" => "movies#index"
+
+  root "movies#test"
 
   # Routes for the Movie resource:
 
