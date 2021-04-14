@@ -12,7 +12,7 @@ Rails.application.routes.draw do
           
   # READ
   get "/movies" => "movies#index" 
-  get "/movies/:id" => "movies#show", as: :movie
+  get "/movies/:id" => "movies#show", as: :movie   # movie_path()
   
   # UPDATE
   patch "/movies/:id" => "movies#update" 
