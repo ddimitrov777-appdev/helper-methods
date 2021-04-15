@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
 def new
     @movie = Movie.new
-  end
+end
 
   def index
     @movies = Movie.order(created_at: :desc)
