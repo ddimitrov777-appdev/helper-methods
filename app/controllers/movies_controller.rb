@@ -5,6 +5,7 @@ end
 
   def index
     @movies = Movie.order(created_at: :desc)
+    @directors = Director.order(created_at: :desc)
 
     respond_to do |format|
       format.json do
