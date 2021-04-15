@@ -1,30 +1,26 @@
 <h1>New movie</h1>
 
-<% @the_movie.errors.full_messages.each do |message| %>
+<% @movie.errors.full_messages.each do |message| %>
   <p style="color: red;"><%= message %></p>
 <% end %>
 
-<%= form_with(url: movies_path) do %>
+<hr>
 
+<%= form_with(model: @movie) do |form| %>
   <div>
-    <%= label_tag :title_box, "Title" %>
+    <%= form.label :title %>
 
-    <%= text_field_tag :title, @the_movie.title, id: “title_box”  %>
-
+    <%= form.text_field :title %>
   </div>
 
   <div>
-    <label for="description_box">
-      Description
-    </label>
-    <%= label_tab :description_box, "Description" %>
-    <textarea id="description_box" name="query_description" rows="3"><%= @the_movie.description %></textarea>
+    <%= form.label :description %>
+
+    <%= form.text_area :description, rows: 3 %>
   </div>
 
-  <button>
-    Create movie
-  </button>
+  <%= form.button %>
+<% end %>
 
-<% end  %>
 
 
