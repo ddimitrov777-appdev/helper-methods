@@ -4,6 +4,7 @@ class DirectorsController < ApplicationController
   end
 
   def index
+      @movies = Movie.order(created_at: :desc)
       @directors = Director.order(created_at: :desc)
 
     respond_to do |format|
@@ -39,8 +40,8 @@ class DirectorsController < ApplicationController
   def update
        @director = Director.find(params.fetch(:id))
 
-    @director.name= params.fetch(:name)
-    @director.dob = params.fetch(:dob)
+    @director.name= params.fetch(:director).fetch(:name)
+    @director.dob = params.fetch(:director).fetch(:dob)
 
     if @director.valid?
       @director.save
